@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookeesh</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="Container">
+        <div class="navbar">
+            <div class="title1">
+                <h1 class="text1">Bookeesh</h1>
+                <img src="./leaf.png" class="leaf"/>
+            </div>
+        </div>
+        <div class="body">
+            <div class="intro">
+                <div class="left">
+                    <img src="./image.png" alt="Books on shelf" class="image"/>
+                </div>
+                <div class="intro-text">
+                    <p>
+                        "A book ia a garden, an orchard, a <br/>
+                        storehouse, a party, a company by the <br/>
+                        way, a counselor, a multitude of <br/>
+                        counselors"  -Charles Baudelaire<br/>
+                    </p>
+                </div>
+            </div>
+        
+            <div class="nav1">
+                <div class="nav1l">
+                    <div class="nav1ll">
+                        <label for="search"><h3>Search by category:</h3></label>
+                        <select id="searching">
+                            <option value="">--Choose a category--</option>
+                            <option value="title">Title</option>
+                            <option value="authors">Author</option>
+                        </select>
+                    </div>
+                    <div class="nav1lr">
+                        <input id="search" type="text" />
+                        <button id="srbtn" class="text2">Search</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <button type="button" class="text2"> Filter </button>
+                    <button type="button" class="text2" id="favbtn"> Favourites </button>
+                </div>
+            </div>
+            <div class="books">
+            </div>
+            <hr/>
+            <div class="favlist">
+                <h2>Favourites</h2>
+                <div id="favbooks"></div>
+            </div>
+            
+        </div>    
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js" charset="UTF-8"> </script>    
+</body>
+</html>
