@@ -149,7 +149,7 @@ h2{
     grid-auto-rows: 1fr;
     gap: 2px;
 }
-@media (min-width:576px) and (max-width:768px){
+@media (min-width:100px) and (max-width:768px){
     .intro{
         display: flex;
         flex-direction: column;
