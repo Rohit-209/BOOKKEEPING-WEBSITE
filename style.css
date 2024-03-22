@@ -66,6 +66,17 @@ h1{
     font-size: 20px;
     cursor: pointer;
 }
+.summary{
+    margin-top: 10px;
+    background-color: #594a3c;
+    border: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #f2ece4;
+    border-radius: 20px;
+    padding: 10px;
+    
+}
 label{
     font-size: 20px;
     color: #594a3c;
@@ -88,6 +99,10 @@ input{
     align-items: center;
     color: #594a3c;
     background-color: #f2ece4;
+}
+.cover{
+    width: 100%;
+    height: 100%;
 }
 .leaf{
     height: 50px;
@@ -139,7 +154,7 @@ h2{
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: 1fr;
-    gap: 2px;
+    gap: 5px;
 
 }
 .favbooks{
@@ -149,6 +164,7 @@ h2{
     grid-auto-rows: 1fr;
     gap: 2px;
 }
+
 @media (min-width:100px) and (max-width:768px){
     .intro{
         display: flex;
@@ -217,3 +233,4 @@ h2{
         grid-auto-rows: 1fr; 
     }
 }
+
