@@ -46,6 +46,8 @@ fetch(url,options)
 
 		let categorygroup;
 		let finalgroup;
+		let allbooks = [];
+		
 
 		finalgroup = obj['results'];
 		updatedisplay(finalgroup);
@@ -58,8 +60,8 @@ fetch(url,options)
 		function selectobj(){
 			finalgroup = [];
 
-			if(searchterm.value.trim() === ''){
-				finalgroup = obj;
+			if(searchterm.value.trim() === '' || category.value.toLowerCase() === 'all'){
+				finalgroup = obj['results'];
 			}else {
 				let lowercasesearchterm = searchterm.value.trim().toLowerCase();
 				if(category.value.toLowerCase() === 'title'){
@@ -69,6 +71,8 @@ fetch(url,options)
 					finalgroup = obj["results"].filter(book => book.authors[0].toLowerCase().includes(lowercasesearchterm));
 				}
 			}
+			searchterm.value = "";
+			searchterm.focus();
 			updatedisplay(finalgroup);
 		} 
 
@@ -80,8 +84,9 @@ fetch(url,options)
 			
 			for (let i=0;i < 25 ; i++){
 			//creating elements where we can store data
-
+			
 			const block = document.createElement("div"); //creating division so to show in grid
+			const descrip = document.createElement("div");
 			const booktitle = document.createElement("h2");
 			const bookauthor = document.createElement("h3");
 			const seriesname = document.createElement("h3");
@@ -91,6 +96,7 @@ fetch(url,options)
 			const favbutton = document.createElement("button");
 			const summary = document.createElement("button");
 			const cover = document.createElement("img");
+			const para = document.createElement("p");
 			
 			//Adding data to the elements
 			booktitle.textContent = finalgroup[i]["title"];
@@ -101,24 +107,40 @@ fetch(url,options)
 			favbutton.textContent = "Add to Favourites";
 			summary.textContent = "View Summary";
 			cover.src = finalgroup[i]['published_works'][0]['cover_art_url'];
+			
 
 			favbutton.classList.add("favbtn");
 			summary.classList.add("summary");
 			block.classList.add("block");
 			cover.classList.add("cover");
+			descrip.classList.add("descrip");
 
 			//Adding elements to the division we created to show them in grid
-			block.appendChild(cover);
-			block.appendChild(booktitle);
-			block.appendChild(seriesname);
-			block.appendChild(bookauthor);
-			block.appendChild(booktype);
-			block.appendChild(language);
-			block.appendChild(favbutton);
-			block.appendChild(summary);
+			descrip.appendChild(cover);
+			descrip.appendChild(booktitle);
+			descrip.appendChild(seriesname);
+			descrip.appendChild(bookauthor);
+			descrip.appendChild(booktype);
+			descrip.appendChild(language);
+			descrip.appendChild(favbutton);
+			descrip.appendChild(summary);
 
 			//Adding the division we created in one division which will contain all the inner divisions and show them in grid display
-			division.appendChild(block);					
+			block.appendChild(cover);
+			block.appendChild(descrip);
+			allbooks.push(block);
+			division.appendChild(block);
+			
+			/*document.querySelector(summary).addEventListener('click',
+			() => {
+				para.textContent = finalgroup[i]['summary'];
+				division.appendChild(para);
+			}*/
+				}
+			}
+			for(const b of allbooks ){
+				if (b.textContent === 'Remove From Favourites'){
+					document.querySelector(".favbooks").appendChild(b);
 				}
 			}
 		
