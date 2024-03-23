@@ -118,11 +118,6 @@ input{
     width: 50%;
     height: 100%;
 }
-.leaf{
-    height: 50px;
-    width: 50px;
-}
-
 
 .title1{
     display: flex;
@@ -135,7 +130,10 @@ input{
 }
 
 .image{
-    height: 600px;
+    width: 50vw;
+    height: 80vh;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 .intro{
     background-color: #f2ece4;
@@ -186,12 +184,11 @@ h2{
         justify-content: center;
         align-items: center;
     }
-    .left{
-        justify-content: center;
-        object-fit: contain;
+    .intro-text{
+        width:100vw;
     }
-    img{
-        width: 100%;
+    .image{
+        width: 90vw;
     }
     .books{
         display: grid;
@@ -220,8 +217,40 @@ h2{
     .nav1{
         margin-bottom: 5px;
     }
+    .block{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .descrip{
+        display: flex;
+        flex-direction: column;
+        background-color: #f2ece4;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .cover{
+        width: 100%;
+        height: 100%;
+    }
+    label{
+        width: 40vw;
+        font-size: 4vw;
+        
+    }
+    select{
+        width: 40vw;
+    }
+    .right{
+        visibility: hidden;
+    }
+    #search{
+        width: 60vw;
+    }
+   
 }
-@media (min-width:768px) and (max-width:992px){
+@media (min-width:768px) and (max-width:1056px){
     .intro{
         display: flex;
         flex-direction: column;
@@ -232,8 +261,8 @@ h2{
         justify-content: center;
         
     }
-    img{
-        width: 100%;
+    .image{
+        width:100vw;
         object-fit: fill;
     }
     .books{
@@ -246,4 +275,22 @@ h2{
         grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
         grid-auto-rows: 1fr; 
     }
+    .block{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .descrip{
+        display: flex;
+        flex-direction: column;
+        background-color: #f2ece4;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .cover{
+        width: 100%;
+        height: 100%;
+    }
+
 }
